@@ -7,6 +7,10 @@ public class ParkingBoy {
         this.parkingLot = parkingLot;
     }
 
+    public String query() {
+        return parkingLot.queryMsg();
+    }
+
     public Ticket park(Car car) {
        // Ticket ticket=new Ticket();
        // parkingLot.park(car);

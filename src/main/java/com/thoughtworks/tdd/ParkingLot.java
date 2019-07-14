@@ -6,6 +6,7 @@ import java.util.Map;
 public class ParkingLot {
     private Map<Ticket,Car> cars=new HashMap<>();
     private int maxCount=10;
+    String msg="";
 //    public  void park(Ticket ticket, Car car) {
 //        cars.put(ticket, car);
 //    }
@@ -13,6 +14,8 @@ public class ParkingLot {
     public Car getCar(Ticket ticket) {
       // Car car=  cars.get(ticket);
        Car car =  cars.remove(ticket);
+       if(car==null)
+           msg="Unrecognized parking ticket.";
        return  car;
     }
     public Ticket park(Car car){
@@ -22,5 +25,8 @@ public class ParkingLot {
         Ticket ticket=new Ticket();
         cars.put(ticket,car);
         return ticket;
+    }
+    public String queryMsg(){
+        return  msg;
     }
 }
