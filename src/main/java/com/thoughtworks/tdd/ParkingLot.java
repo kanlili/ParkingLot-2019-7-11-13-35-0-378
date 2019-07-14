@@ -10,6 +10,8 @@ public class ParkingLot {
     }
 
     public Car getCar(Ticket ticket) {
-       return  cars.get(ticket);
+      // Car car=  cars.get(ticket);
+       Car car =  cars.remove(ticket);
+       return  car;
     }
 }
