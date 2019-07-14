@@ -32,6 +32,31 @@ public class ParkingBoyTest {
          Assertions.assertSame(carone, fetchedCarone);
          Assertions.assertSame(cartwo, fetchedCartwo);
      }
+     @Test
+    void should_return_null_when_fectch_car_given_wrong_ticket(){
+         //given
+         ParkingLot parkingLot=new ParkingLot();
+         ParkingBoy parkingBoy=new ParkingBoy(parkingLot);
+         Car car=new Car();
+         parkingBoy.park(car);
+         Ticket ticket=new Ticket();
+         //when
+         Car fetchedCar=parkingBoy.fectch(ticket);
+         //then
+         Assertions.assertSame(fetchedCar, null);
 
-
+     }
+    @Test
+    void should_return_null_when_fectch_car_given_null_ticket(){
+        //given
+        ParkingLot parkingLot=new ParkingLot();
+        ParkingBoy parkingBoy=new ParkingBoy(parkingLot);
+        Car car=new Car();
+        parkingBoy.park(car);
+        Ticket ticket=new Ticket();
+        //when
+        Car fetchedCar=parkingBoy.fectch(null);
+        //then
+        Assertions.assertSame(fetchedCar, null);
+    }
 }
