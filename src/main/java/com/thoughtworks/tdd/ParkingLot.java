@@ -16,7 +16,7 @@ public class ParkingLot {
        return  car;
     }
     public Ticket park(Car car){
-        if(cars.size()>=maxCount){
+        if(cars.size()>=maxCount||cars.containsValue(car)||car==null){
             return  null;
         }
         Ticket ticket=new Ticket();

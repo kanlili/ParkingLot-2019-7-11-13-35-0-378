@@ -89,4 +89,27 @@ public class ParkingBoyTest {
         //then
         Assertions.assertSame(ticket, null);
     }
+    @Test
+    void should_return_no_car_when_park_car_given_parked_car(){
+        //given
+        ParkingLot parkingLot=new ParkingLot();
+        ParkingBoy parkingBoy=new ParkingBoy(parkingLot);
+        Car car=new Car();
+        Ticket ticketone=parkingBoy.park(car);
+        Ticket tickettwo=parkingBoy.park(car);
+        //when
+        //Car fetchedCar=parkingBoy.fectch(ticket);
+        //then
+        Assertions.assertSame(tickettwo,null );
+
+    }
+    @Test
+    void should_return_null_when_park_car_given_null_car(){
+        //given
+        ParkingLot parkingLot=new ParkingLot();
+        ParkingBoy parkingBoy=new ParkingBoy(parkingLot);
+       // Car car=new Car();
+        Ticket ticketone=parkingBoy.park(null);
+        Assertions.assertSame(ticketone,null );
+    }
 }
