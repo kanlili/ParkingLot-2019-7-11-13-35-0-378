@@ -26,6 +26,7 @@ public class ParkingLot {
     }
     public Ticket park(Car car){
         if(cars.size()>=maxCount||cars.containsValue(car)||car==null){
+            msg="Not enough position.";
             return  null;
         }
         Ticket ticket=new Ticket();

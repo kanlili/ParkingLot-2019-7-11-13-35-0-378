@@ -138,5 +138,22 @@ public class ParkingBoyTest {
         //then
         Assertions.assertSame( message, "Please provide your parking ticket.");
     }
-
+    @Test
+    void should_return_errorMsg_when_park_car_given_overcar(){
+        //given
+        ParkingLot parkingLot=new ParkingLot();
+        ParkingBoy parkingBoy=new ParkingBoy(parkingLot);
+        //Car car=new Car();
+        for(int i=0;i<10;i++){
+            Car carTen=new Car();
+            parkingBoy.park(carTen);
+        }
+        Car overcar=new Car();
+        Ticket ticket=parkingBoy.park(overcar);
+        String message=parkingBoy.query();
+        //when
+        //Car fetchedCar=parkingBoy.fectch(ticket);
+        //then
+        Assertions.assertSame( message, "Not enough position.");
+    }
 }
