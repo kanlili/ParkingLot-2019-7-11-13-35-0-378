@@ -72,4 +72,21 @@ public class ParkingBoyTest {
         //then
         Assertions.assertSame(fetchedCarTwo, null);
     }
+    @Test
+    void should_return_not_parking_car_when_parkignlot_capacity_full_gien_over10(){
+        //given
+        ParkingLot parkingLot=new ParkingLot();
+        ParkingBoy parkingBoy=new ParkingBoy(parkingLot);
+        //Car car=new Car();
+        for(int i=0;i<10;i++){
+            Car carTen=new Car();
+            parkingBoy.park(carTen);
+        }
+        Car overcar=new Car();
+        Ticket ticket=parkingBoy.park(overcar);
+        //when
+        //Car fetchedCar=parkingBoy.fectch(ticket);
+        //then
+        Assertions.assertSame(ticket, null);
+    }
 }

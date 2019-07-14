@@ -8,9 +8,9 @@ public class ParkingBoy {
     }
 
     public Ticket park(Car car) {
-        Ticket ticket=new Ticket();
-        parkingLot.park(ticket,car);
-        return ticket;
+       // Ticket ticket=new Ticket();
+       // parkingLot.park(car);
+        return parkingLot.park(car);
     }
 
     public Car fectch(Ticket ticket) {
