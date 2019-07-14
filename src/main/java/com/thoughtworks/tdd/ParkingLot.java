@@ -13,9 +13,15 @@ public class ParkingLot {
 
     public Car getCar(Ticket ticket) {
       // Car car=  cars.get(ticket);
+        if(ticket==null){
+            msg="Please provide your parking ticket.";
+            return  null;
+        }
        Car car =  cars.remove(ticket);
-       if(car==null)
-           msg="Unrecognized parking ticket.";
+       if(car==null) {
+           msg = "Unrecognized parking ticket.";
+       }
+
        return  car;
     }
     public Ticket park(Car car){

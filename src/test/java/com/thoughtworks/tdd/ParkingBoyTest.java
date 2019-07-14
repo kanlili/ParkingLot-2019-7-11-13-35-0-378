@@ -125,4 +125,18 @@ public class ParkingBoyTest {
         //then
         Assertions.assertSame( message, "Unrecognized parking ticket.");
     }
+    @Test
+    void should_return_errorMsg_when_fetch_car_given_null_ticket(){
+        //given
+        ParkingLot parkingLot=new ParkingLot();
+        ParkingBoy parkingBoy=new ParkingBoy(parkingLot);
+        //Car car=new Car();
+       // Ticket ticket=new Ticket();
+        //when
+        Car fetchedCar=parkingBoy.fectch(null);
+        String message=parkingBoy.query();
+        //then
+        Assertions.assertSame( message, "Please provide your parking ticket.");
+    }
+
 }
